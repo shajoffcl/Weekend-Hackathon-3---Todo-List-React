@@ -12,9 +12,13 @@ function App() {
   };
 
   const handleClick = () => {
+    if (!itemName) {
+      return;
+    }
     let arr = [...itemList];
     arr.push(itemName);
     setItemList(arr);
+    setItemName("");
   };
   return (
     <div id="main">
@@ -24,8 +28,8 @@ function App() {
       </button>
       <ul>
         {itemList.map((item, index) => (
-          <li className="list">
-            <ToDoList key={index} item={item} />
+          <li className="list" key={index}>
+            <ToDoList item={item} />
           </li>
         ))}
       </ul>
