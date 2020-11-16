@@ -3,33 +3,43 @@ import "./../styles/App.css";
 import ToDoList from "./toDoList";
 
 function App() {
-  const [itemName, setItemName] = React.useState("");
+  const [inputText, setInputText] = React.useState("");
   const [itemList, setItemList] = React.useState([]);
 
   const handleChange = (event) => {
     let input = event.target.value;
-    setItemName(input);
+    setInputText(input);
   };
 
   const handleClick = () => {
-    if (!itemName) {
+    if (!inputText) {
       return;
     }
     let arr = [...itemList];
-    arr.push(itemName);
+    arr.push(inputText);
     setItemList(arr);
-    setItemName("");
+    setInputText("");
   };
+
+  const handleDelete = (name) => {
+    //console.log(name);
+    let arr = [...itemList];
+    //console.log(arr);
+    let filterArr = arr.filter((item) => item !== name);
+    // console.log(filterArr);
+    setItemList(filterArr);
+  };
+
   return (
     <div id="main">
-      <input type="text" id="task" onChange={handleChange} value={itemName} />
+      <input type="text" id="task" onChange={handleChange} value={inputText} />
       <button id="btn" onClick={handleClick}>
         Add
       </button>
       <ul>
         {itemList.map((item, index) => (
           <li className="list" key={index}>
-            <ToDoList item={item} />
+            <ToDoList itemName={item} handleDelete={handleDelete} />
           </li>
         ))}
       </ul>

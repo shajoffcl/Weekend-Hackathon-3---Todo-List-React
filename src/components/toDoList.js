@@ -2,9 +2,11 @@ import React from "react";
 import "./../styles/App.css";
 
 function ToDoList(props) {
+  const { itemName, handleDelete } = props;
   return (
     <>
-      <h1>{props.item}</h1>
+      {itemName}
+      <button onClick={() => handleDelete(itemName)}>Delete</button>
     </>
   );
 }
