@@ -6,9 +6,9 @@ function ToDoList(props) {
   return (
     <>
       {itemName}
-      <div>
+      {/* <div>
         <button className="delete">Delete</button>
-      </div>
+      </div> */}
     </>
   );
 }

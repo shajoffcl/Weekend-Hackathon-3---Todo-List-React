@@ -38,7 +38,7 @@ function App() {
       </button>
       <ul>
         {itemList.map((item, index) => (
-          <li className="list" key={item + index}>
+          <li className="list">
             <ToDoList key={item + index} itemName={item} />
           </li>
         ))}
