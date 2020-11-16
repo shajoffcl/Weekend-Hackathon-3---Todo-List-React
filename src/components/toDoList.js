@@ -5,10 +5,10 @@ function ToDoList(props) {
   const { itemName } = props;
   return (
     <>
-      {itemName}
-      {/* <div>
+      <li className="list">{itemName}</li>
+      <div>
         <button className="delete">Delete</button>
-      </div> */}
+      </div>
     </>
   );
 }
