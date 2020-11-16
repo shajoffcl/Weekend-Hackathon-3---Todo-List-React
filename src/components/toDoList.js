@@ -34,7 +34,7 @@ function ToDoList(props) {
             value={editText}
             placeholder="Edit task"
           />
-          <button className="editSave" onClick={() => handleSave(id)}>
+          <button className="saveTask" onClick={() => handleSave(id)}>
             Save
           </button>
         </div>
