@@ -38,8 +38,12 @@ function App() {
       </button>
       <ul>
         {itemList.map((item, index) => (
-          <li className="list" key={index}>
-            <ToDoList itemName={item} handleDelete={handleDelete} />
+          <li className="list" key={item + index}>
+            <ToDoList
+              key={item + index}
+              itemName={item}
+              handleDelete={handleDelete}
+            />
           </li>
         ))}
       </ul>
