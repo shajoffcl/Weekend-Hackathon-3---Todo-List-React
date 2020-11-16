@@ -6,9 +6,11 @@ function ToDoList(props) {
   return (
     <>
       {itemName}
-      <button className="delete" onClick={() => handleDelete(itemName)}>
-        Delete
-      </button>
+      <div>
+        <button className="delete" onClick={() => handleDelete(itemName)}>
+          Delete
+        </button>
+      </div>
     </>
   );
 }
