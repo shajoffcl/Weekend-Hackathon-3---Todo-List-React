@@ -21,14 +21,14 @@ function App() {
     setInputText("");
   };
 
-  // const handleDelete = (name) => {
-  //   //console.log(name);
-  //   let arr = [...itemList];
-  //   //console.log(arr);
-  //   let filterArr = arr.filter((item) => item !== name);
-  //   // console.log(filterArr);
-  //   setItemList(filterArr);
-  // };
+  const handleDelete = (name) => {
+    //console.log(name);
+    let arr = [...itemList];
+    //console.log(arr);
+    let filterArr = arr.filter((item) => item !== name);
+    // console.log(filterArr);
+    setItemList(filterArr);
+  };
 
   return (
     <div id="main">
@@ -38,7 +38,11 @@ function App() {
       </button>
       <ul>
         {itemList.map((item, index) => (
-          <ToDoList key={item + index} itemName={item} />
+          <ToDoList
+            key={item + index}
+            itemName={item}
+            handleDelete={handleDelete}
+          />
         ))}
       </ul>
     </div>
